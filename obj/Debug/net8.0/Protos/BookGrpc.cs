@@ -8,9 +8,9 @@
 using grpc = global::Grpc.Core;
 
 namespace BooksService {
-  public static partial class BookService
+  public static partial class GBookService
   {
-    static readonly string __ServiceName = "book.BookService";
+    static readonly string __ServiceName = "book.GBookService";
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
     static void __Helper_SerializeMessage(global::Google.Protobuf.IMessage message, grpc::SerializationContext context)
@@ -46,17 +46,61 @@ namespace BooksService {
     }
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::BooksService.BooksRequest> __Marshaller_book_BooksRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.BooksRequest.Parser));
+    static readonly grpc::Marshaller<global::BooksService.GBooksRequest> __Marshaller_book_GBooksRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.GBooksRequest.Parser));
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Marshaller<global::BooksService.BooksResponse> __Marshaller_book_BooksResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.BooksResponse.Parser));
+    static readonly grpc::Marshaller<global::BooksService.GBooksResponse> __Marshaller_book_GBooksResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.GBooksResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::BooksService.GBookByUidRequest> __Marshaller_book_GBookByUidRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.GBookByUidRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::BooksService.GBookResponse> __Marshaller_book_GBookResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.GBookResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::BooksService.GBookByIdRequest> __Marshaller_book_GBookByIdRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.GBookByIdRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::BooksService.GDeleteResponse> __Marshaller_book_GDeleteResponse = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.GDeleteResponse.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::BooksService.GCreateBookRequest> __Marshaller_book_GCreateBookRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.GCreateBookRequest.Parser));
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Marshaller<global::BooksService.GUpdateBookRequest> __Marshaller_book_GUpdateBookRequest = grpc::Marshallers.Create(__Helper_SerializeMessage, context => __Helper_DeserializeMessage(context, global::BooksService.GUpdateBookRequest.Parser));
 
     [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-    static readonly grpc::Method<global::BooksService.BooksRequest, global::BooksService.BooksResponse> __Method_GetBooks = new grpc::Method<global::BooksService.BooksRequest, global::BooksService.BooksResponse>(
+    static readonly grpc::Method<global::BooksService.GBooksRequest, global::BooksService.GBooksResponse> __Method_GetBooks = new grpc::Method<global::BooksService.GBooksRequest, global::BooksService.GBooksResponse>(
         grpc::MethodType.Unary,
         __ServiceName,
         "GetBooks",
-        __Marshaller_book_BooksRequest,
-        __Marshaller_book_BooksResponse);
+        __Marshaller_book_GBooksRequest,
+        __Marshaller_book_GBooksResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::BooksService.GBookByUidRequest, global::BooksService.GBookResponse> __Method_GetBookByUid = new grpc::Method<global::BooksService.GBookByUidRequest, global::BooksService.GBookResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "GetBookByUid",
+        __Marshaller_book_GBookByUidRequest,
+        __Marshaller_book_GBookResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::BooksService.GBookByIdRequest, global::BooksService.GDeleteResponse> __Method_DeleteBook = new grpc::Method<global::BooksService.GBookByIdRequest, global::BooksService.GDeleteResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "DeleteBook",
+        __Marshaller_book_GBookByIdRequest,
+        __Marshaller_book_GDeleteResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::BooksService.GCreateBookRequest, global::BooksService.GBookResponse> __Method_CreateBook = new grpc::Method<global::BooksService.GCreateBookRequest, global::BooksService.GBookResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "CreateBook",
+        __Marshaller_book_GCreateBookRequest,
+        __Marshaller_book_GBookResponse);
+
+    [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+    static readonly grpc::Method<global::BooksService.GUpdateBookRequest, global::BooksService.GBookResponse> __Method_UpdateBook = new grpc::Method<global::BooksService.GUpdateBookRequest, global::BooksService.GBookResponse>(
+        grpc::MethodType.Unary,
+        __ServiceName,
+        "UpdateBook",
+        __Marshaller_book_GUpdateBookRequest,
+        __Marshaller_book_GBookResponse);
 
     /// <summary>Service descriptor</summary>
     public static global::Google.Protobuf.Reflection.ServiceDescriptor Descriptor
@@ -64,58 +108,138 @@ namespace BooksService {
       get { return global::BooksService.BookReflection.Descriptor.Services[0]; }
     }
 
-    /// <summary>Client for BookService</summary>
-    public partial class BookServiceClient : grpc::ClientBase<BookServiceClient>
+    /// <summary>Client for GBookService</summary>
+    public partial class GBookServiceClient : grpc::ClientBase<GBookServiceClient>
     {
-      /// <summary>Creates a new client for BookService</summary>
+      /// <summary>Creates a new client for GBookService</summary>
       /// <param name="channel">The channel to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public BookServiceClient(grpc::ChannelBase channel) : base(channel)
+      public GBookServiceClient(grpc::ChannelBase channel) : base(channel)
       {
       }
-      /// <summary>Creates a new client for BookService that uses a custom <c>CallInvoker</c>.</summary>
+      /// <summary>Creates a new client for GBookService that uses a custom <c>CallInvoker</c>.</summary>
       /// <param name="callInvoker">The callInvoker to use to make remote calls.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public BookServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
+      public GBookServiceClient(grpc::CallInvoker callInvoker) : base(callInvoker)
       {
       }
       /// <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected BookServiceClient() : base()
+      protected GBookServiceClient() : base()
       {
       }
       /// <summary>Protected constructor to allow creation of configured clients.</summary>
       /// <param name="configuration">The client configuration.</param>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected BookServiceClient(ClientBaseConfiguration configuration) : base(configuration)
+      protected GBookServiceClient(ClientBaseConfiguration configuration) : base(configuration)
       {
       }
 
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::BooksService.BooksResponse GetBooks(global::BooksService.BooksRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual global::BooksService.GBooksResponse GetBooks(global::BooksService.GBooksRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetBooks(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual global::BooksService.BooksResponse GetBooks(global::BooksService.BooksRequest request, grpc::CallOptions options)
+      public virtual global::BooksService.GBooksResponse GetBooks(global::BooksService.GBooksRequest request, grpc::CallOptions options)
       {
         return CallInvoker.BlockingUnaryCall(__Method_GetBooks, null, options, request);
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::BooksService.BooksResponse> GetBooksAsync(global::BooksService.BooksRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GBooksResponse> GetBooksAsync(global::BooksService.GBooksRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
       {
         return GetBooksAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
       }
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      public virtual grpc::AsyncUnaryCall<global::BooksService.BooksResponse> GetBooksAsync(global::BooksService.BooksRequest request, grpc::CallOptions options)
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GBooksResponse> GetBooksAsync(global::BooksService.GBooksRequest request, grpc::CallOptions options)
       {
         return CallInvoker.AsyncUnaryCall(__Method_GetBooks, null, options, request);
       }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::BooksService.GBookResponse GetBookByUid(global::BooksService.GBookByUidRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetBookByUid(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::BooksService.GBookResponse GetBookByUid(global::BooksService.GBookByUidRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_GetBookByUid, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GBookResponse> GetBookByUidAsync(global::BooksService.GBookByUidRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return GetBookByUidAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GBookResponse> GetBookByUidAsync(global::BooksService.GBookByUidRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_GetBookByUid, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::BooksService.GDeleteResponse DeleteBook(global::BooksService.GBookByIdRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteBook(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::BooksService.GDeleteResponse DeleteBook(global::BooksService.GBookByIdRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_DeleteBook, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GDeleteResponse> DeleteBookAsync(global::BooksService.GBookByIdRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return DeleteBookAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GDeleteResponse> DeleteBookAsync(global::BooksService.GBookByIdRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_DeleteBook, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::BooksService.GBookResponse CreateBook(global::BooksService.GCreateBookRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateBook(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::BooksService.GBookResponse CreateBook(global::BooksService.GCreateBookRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_CreateBook, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GBookResponse> CreateBookAsync(global::BooksService.GCreateBookRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return CreateBookAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GBookResponse> CreateBookAsync(global::BooksService.GCreateBookRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_CreateBook, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::BooksService.GBookResponse UpdateBook(global::BooksService.GUpdateBookRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateBook(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual global::BooksService.GBookResponse UpdateBook(global::BooksService.GUpdateBookRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.BlockingUnaryCall(__Method_UpdateBook, null, options, request);
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GBookResponse> UpdateBookAsync(global::BooksService.GUpdateBookRequest request, grpc::Metadata headers = null, global::System.DateTime? deadline = null, global::System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+      {
+        return UpdateBookAsync(request, new grpc::CallOptions(headers, deadline, cancellationToken));
+      }
+      [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
+      public virtual grpc::AsyncUnaryCall<global::BooksService.GBookResponse> UpdateBookAsync(global::BooksService.GUpdateBookRequest request, grpc::CallOptions options)
+      {
+        return CallInvoker.AsyncUnaryCall(__Method_UpdateBook, null, options, request);
+      }
       /// <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
       [global::System.CodeDom.Compiler.GeneratedCode("grpc_csharp_plugin", null)]
-      protected override BookServiceClient NewInstance(ClientBaseConfiguration configuration)
+      protected override GBookServiceClient NewInstance(ClientBaseConfiguration configuration)
       {
-        return new BookServiceClient(configuration);
+        return new GBookServiceClient(configuration);
       }
     }
 
